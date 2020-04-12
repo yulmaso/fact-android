@@ -1,11 +1,61 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textViewStyle">@style/BaseTextViewStyle</item>
+        <item name="editTextStyle">@style/EditTextBaseStyle</item>
+        <item name="android:textColorHint">@color/darkGrey</item>
+    </style>
+
+    <style name="RobotoLight">
+        <item name="fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="RobotoMedium">
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="BaseTextViewStyle" parent="android:Widget.TextView">
+        <item name="fontFamily">sans-serif-regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    
+    <style name="BlockHeaderTextViewStyle" parent="BaseTextViewStyle">
+        <item name="fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/darkGrey</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ButtonBaseStyle" parent="android:Widget.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/BaseTextViewStyle</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="ButtonRoundedStyle" parent="ButtonBaseStyle">
+        <item name="android:background">@drawable/button_rounded</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonFlatStyle" parent="ButtonBaseStyle">
+        <item name="android:background">@drawable/button_flat</item>
+    </style>
+
+    <style name="EditTextBaseStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edittext_default</item>
+        <item name="android:textAppearance">@style/RobotoLight</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="CardViewBaseStyle" parent="CardView">
+        <item name="background">@color/white</item>
     </style>
 
 </resources>

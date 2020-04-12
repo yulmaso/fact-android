@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/newsFragment"
+            android:icon="@drawable/ic_news"
+            android:title="@string/news" />
+        <item
+            android:id="@+id/timetableFragment"
+            android:icon="@drawable/ic_timetable"
+            android:title="@string/news" />
+        <item
+            android:id="@+id/menuFragment"
+            android:icon="@drawable/ic_menu"
+            android:title="@string/news" />
+    </group>
+</menu>

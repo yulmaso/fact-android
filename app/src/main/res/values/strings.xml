@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">KSKFact</string>
+
+    <!--Bottom navigation-->
+    <string name="news">Новости</string>
+    <string name="timetable">Расписание</string>
+    <string name="menu">Меню</string>
+
+    <!--Login screen-->
+    <string name="login_et">Логин</string>
+    <string name="password_et">Пароль</string>
+    <string name="enter_btn">Войти</string>
+
+    <!--News screen-->
+    <string name="news_screen_header">Новости</string>
+
+    <!--Timetable screen-->
+    <string name="timetable_screen_header">Расписание</string>
+
+    <!--Menu screen-->
+    <string name="menu_screen_header">Меню</string>
+    <string name="profile_menu_item">Профиль</string>
+    <string name="horses_menu_item">Лошади</string>
+    <string name="employees_menu_item">Сотрудники</string>
+    <string name="cameras_menu_item">Камеры</string>
+    <string name="settings_menu_item">Настройки</string>
+
+    <!--News item-->
+    <string name="tools_news_text">Ура, мы обновили песок и опилки в кордовом манеже. Приглашаем всех на занятия!</string>
+
+    <!--Timetable item-->
+    <string name="tools_timetable_start">09:00</string>
+    <string name="tools_timetable_end">10:00</string>
+    <string name="tools_timetable_horse">Марсель</string>
+    <string name="tools_timetable_trainer">Александрова Л. И.</string>
 </resources>

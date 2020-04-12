@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.yulmaso.kskfact.ui.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_timetableFragment"
+            app:destination="@id/timetableFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.yulmaso.kskfact.ui.news.NewsFragment"
+        android:label="NewsFragment" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.yulmaso.kskfact.ui.menu.MenuFragment"
+        android:label="MenuFragment" />
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="com.yulmaso.kskfact.ui.timetable.TimetableFragment"
+        android:label="TimetableFragment" />
+</navigation>
