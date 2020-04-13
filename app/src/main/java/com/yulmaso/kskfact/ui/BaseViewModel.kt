@@ -1,6 +1,19 @@
 package com.yulmaso.kskfact.ui
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 
-abstract class BaseViewModel: ViewModel() {
+abstract class BaseViewModel(application: Application): AndroidViewModel(application) {
+
+    var requestListener: RequestListener? = null
+
+//    //disposable to dispose the Completable
+//    protected val disposables = CompositeDisposable()
+//
+//    //disposing the disposables
+//    override fun onCleared() {
+//        super.onCleared()
+//        disposables.dispose()
+//    }
+
 }

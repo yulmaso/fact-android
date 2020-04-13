@@ -25,6 +25,39 @@
     <string name="cameras_menu_item">Камеры</string>
     <string name="settings_menu_item">Настройки</string>
 
+    <!--Settings screen-->
+    <string name="settings_notification_block">Уведомления о вакцинациях</string>
+    <string name="settings_push_notifications">Push-уведомления</string>
+    <string name="settings_before_vaccination">Перед вакцинацией</string>
+    <string name="settings_planning_vaccination">Планирование вакцинации</string>
+    <string name="settings_planning_explanation">Присылать уведомление при планировании клубом новой вакцинации.</string>
+    <string name="settings_account_block">Аккаунт</string>
+    <string name="settings_email_row">Email</string>
+    <string name="settings_login_row">Логин</string>
+    <string name="settings_change_password_btn">Изменить пароль</string>
+    <string name="settings_exit_btn">Выйти</string>
+    <string-array name="tools_before_vaccination">
+        <item name="2 days">2 дн.</item>
+    </string-array>
+
+    <!--Dialog new training-->
+    <string name="newTraining_header">Новая тренировка</string>
+    <string name="newTraining_horse">Лошадь:</string>
+    <string name="newTraining_startTime">Время начала:</string>
+    <string name="newTraining_kind">Вид:</string>
+    <string name="newTraining_addButton">Добавить</string>
+    <string name="newTraining_cancelButton">Отмена</string>
+    <string-array name="tools_spinner_horses">
+        <item name="Marsel">Марсель</item>
+    </string-array>
+    <string-array name="tools_spinner_start">
+        <item name="start">18:00</item>
+    </string-array>
+    <string-array name="tools_spinner_kind">
+        <item name="adult">Взрослая</item>
+    </string-array>
+
+
     <!--News item-->
     <string name="tools_news_text">Ура, мы обновили песок и опилки в кордовом манеже. Приглашаем всех на занятия!</string>
 
@@ -33,4 +66,8 @@
     <string name="tools_timetable_end">10:00</string>
     <string name="tools_timetable_horse">Марсель</string>
     <string name="tools_timetable_trainer">Александрова Л. И.</string>
+
+    <!--Cameras item-->
+    <string name="tools_camera_name">CAMERA_1</string>
+    
 </resources>

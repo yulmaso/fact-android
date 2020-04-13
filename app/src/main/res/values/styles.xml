@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -10,6 +9,8 @@
         <item name="android:textViewStyle">@style/BaseTextViewStyle</item>
         <item name="editTextStyle">@style/EditTextBaseStyle</item>
         <item name="android:textColorHint">@color/darkGrey</item>
+
+        <item name="cardViewStyle">@style/CardViewBaseStyle</item>
     </style>
 
     <style name="RobotoLight">
@@ -23,6 +24,7 @@
     <style name="BaseTextViewStyle" parent="android:Widget.TextView">
         <item name="fontFamily">sans-serif-regular</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
     </style>
     
     <style name="BlockHeaderTextViewStyle" parent="BaseTextViewStyle">
@@ -54,8 +56,13 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="SpinnerBaseStyle" parent="Widget.AppCompat.Spinner">
+
+    </style>
+
     <style name="CardViewBaseStyle" parent="CardView">
         <item name="background">@color/white</item>
+        <item name="cardElevation">0dp</item>
     </style>
 
 </resources>

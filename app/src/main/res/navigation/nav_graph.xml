@@ -9,7 +9,10 @@
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_timetableFragment"
-            app:destination="@id/timetableFragment" />
+            app:destination="@id/timetableFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/timetableFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/newsFragment"
