@@ -26,6 +26,7 @@
     <string name="settings_menu_item">Настройки</string>
 
     <!--Settings screen-->
+    <string name="settings_screen_header">Настройки</string>
     <string name="settings_notification_block">Уведомления о вакцинациях</string>
     <string name="settings_push_notifications">Push-уведомления</string>
     <string name="settings_before_vaccination">Перед вакцинацией</string>
@@ -39,6 +40,22 @@
     <string-array name="tools_before_vaccination">
         <item name="2 days">2 дн.</item>
     </string-array>
+
+    <!--Horses screen-->
+    <string name="horses_screen_header">Лошади</string>
+    <string name="horses_gender_age_title">Пол, возраст</string>
+    <string name="horses_owner_title">Владелец</string>
+
+    <!--Horse profile-->
+    <string name="horse_profile_screen_header">Профиль лошади</string>
+    <string name="hprofile_gender_age_title">Пол, возраст</string>
+    <string name="hprofile_owner_title">Владелец</string>
+    <string name="hprofile_stable_title">Коншня</string>
+    <string name="hprofile_access_block">Доступ</string>
+    <string name="hprofile_additions_block">Дополнительные услуги</string>
+    <string name="hprofile_add_btn">Добавить</string>
+    <string name="hprofile_planning_vaccinations_block">Планируемые вакцинации</string>
+    <string name="hprofile_vaccinations_history_btn">История вакцинаций</string>
 
     <!--Dialog new training-->
     <string name="newTraining_header">Новая тренировка</string>
@@ -57,7 +74,6 @@
         <item name="adult">Взрослая</item>
     </string-array>
 
-
     <!--News item-->
     <string name="tools_news_text">Ура, мы обновили песок и опилки в кордовом манеже. Приглашаем всех на занятия!</string>
 
@@ -69,5 +85,9 @@
 
     <!--Cameras item-->
     <string name="tools_camera_name">CAMERA_1</string>
+
+    <!--Horses item-->
+    <string name="horses_gender_age">Пол, возраст</string>
+    <string name="horses_owner">Владелец</string>
     
 </resources>

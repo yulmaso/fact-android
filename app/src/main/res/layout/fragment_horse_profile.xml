@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.yulmaso.kskfact.ui.horseProfile.HorseProfileViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp">
+
+                <TextView
+                    android:id="@+id/hprofile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@id/hprofile_separator1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Гром" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintBottom_toBottomOf="@id/hprofile_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/hprofile_name"
+                    tools:text="На карантине до 18.04" />
+
+                <View
+                    android:id="@+id/hprofile_separator1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightGrey"
+                    app:layout_constraintBottom_toTopOf="@id/hprofile_gender_age"
+                    app:layout_constraintTop_toBottomOf="@id/hprofile_name" />
+
+                <TextView
+                    android:id="@+id/hprofile_gender_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toTopOf="@id/hprofile_owner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hprofile_separator1"
+                    tools:text="Мерин, 6 лет" />
+
+                <TextView
+                    android:id="@+id/hprofile_gender_age_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/horses_gender_age"
+                    android:textColor="@color/darkGrey"
+                    app:layout_constraintBottom_toBottomOf="@id/hprofile_gender_age"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/hprofile_gender_age" />
+
+                <TextView
+                    android:id="@+id/hprofile_owner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toTopOf="@id/hprofile_stable"
+                    app:layout_constraintEnd_toStartOf="@id/horses_owner_title"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hprofile_gender_age"
+                    tools:text="Конюхов Иван Иванович" />
+
+                <TextView
+                    android:id="@+id/horses_owner_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/horses_owner"
+                    android:textColor="@color/darkGrey"
+                    app:layout_constraintBottom_toBottomOf="@id/hprofile_owner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/hprofile_owner" />
+
+                <TextView
+                    android:id="@+id/hprofile_stable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hprofile_owner"
+                    tools:text="#2" />
+
+                <TextView
+                    android:id="@+id/hprofile_stable_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/darkGrey"
+                    app:layout_constraintBottom_toBottomOf="@id/hprofile_stable"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/hprofile_stable"
+                    tools:text="@string/hprofile_stable_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/hprofile_access_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/RobotoLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="@string/hprofile_access_block"
+                android:textAllCaps="true"
+                android:textColor="@color/darkGrey" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hprofile_access_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_info_row" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hprofile_additions_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/RobotoLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="@string/hprofile_additions_block"
+                android:textAllCaps="true"
+                android:textColor="@color/darkGrey" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hprofile_additions_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_info_row" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/hprofile_add_additional_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewmodel.addAdditionalService()}">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/hprofile_add_additional_btn_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/hprofile_add_btn"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/hprofile_add_additional_btn_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/hprofile_add_additional_btn_title"
+                        app:srcCompat="@drawable/ic_add_accent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hprofile_planning_vaccinations_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/RobotoLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="@string/hprofile_planning_vaccinations_block"
+                android:textAllCaps="true"
+                android:textColor="@color/darkGrey" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hprofile_planning_vaccinations_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_info_row" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/hprofile_vaccinations_history_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:onClick="@{() -> viewmodel.goToVaccinationsHistory()}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/hprofile_vaccinations_history_btn" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -21,9 +21,24 @@
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.yulmaso.kskfact.ui.menu.MenuFragment"
-        android:label="MenuFragment" />
+        android:label="MenuFragment" >
+        <action
+            android:id="@+id/action_menuFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/timetableFragment"
         android:name="com.yulmaso.kskfact.ui.timetable.TimetableFragment"
         android:label="TimetableFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.yulmaso.kskfact.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

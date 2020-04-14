@@ -14,4 +14,8 @@ abstract class BaseFragment: Fragment() {
     @Inject
     lateinit var loadingDialog: LoadingDialogFragment
 
+    fun showProgressBar() = loadingDialog.show(activity!!.supportFragmentManager, "Loading")
+
+    fun dismissProgressBar() = loadingDialog.dismiss()
+
 }

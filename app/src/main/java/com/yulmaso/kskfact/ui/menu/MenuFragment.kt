@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.yulmaso.kskfact.R
 import com.yulmaso.kskfact.ui.BaseFragment
 import kotlinx.android.synthetic.main.fragment_menu.*
@@ -22,8 +23,8 @@ class MenuFragment: BaseFragment(), MenuAdapter.onMenuListener {
 
     override fun onMenuItemClick(menuItem: String) {
         when (menuItem) {
-//            TODO
-//            resources.getString(R.string.profile_menu_item) ->
+            resources.getString(R.string.settings_menu_item) ->
+                findNavController().navigate(R.id.action_menuFragment_to_settingsFragment)
         }
     }
 }

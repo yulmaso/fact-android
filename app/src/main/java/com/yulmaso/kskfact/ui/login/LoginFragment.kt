@@ -31,20 +31,21 @@ class LoginFragment: BaseFragment(),  RequestListener {
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(
             inflater, R.layout.fragment_login, container, false
         )
+        binding.viewmodel = viewModel
         return binding.root
     }
 
     override fun onStarted() {
-        loadingDialog.show(activity!!.supportFragmentManager, "Loading")
+        showProgressBar()
     }
 
     override fun onSuccess() {
-        loadingDialog.dismiss()
+        dismissProgressBar()
         findNavController().navigate(R.id.action_loginFragment_to_timetableFragment)
     }
 
     override fun onFailure(message: String) {
-        loadingDialog.dismiss()
+        dismissProgressBar()
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 }

@@ -35,7 +35,7 @@
             android:onClick="@{() -> viewmodel.newEvent()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_add" />
+            app:srcCompat="@drawable/ic_add_grey" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
