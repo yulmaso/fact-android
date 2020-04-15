@@ -126,7 +126,7 @@
             android:id="@+id/hprofile_access_block"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -152,7 +152,7 @@
             android:id="@+id/hprofile_additions_block"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -202,7 +202,8 @@
                         app:layout_constraintBottom_toBottomOf="@id/hprofile_add_additional_btn_title"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/hprofile_add_additional_btn_title"
-                        app:srcCompat="@drawable/ic_add_accent" />
+                        app:srcCompat="@drawable/ic_add_accent"
+                        android:contentDescription="@string/hprofile_add_btn_description" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -214,7 +215,7 @@
             android:id="@+id/hprofile_planning_vaccinations_block"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -238,7 +239,7 @@
                 android:id="@+id/hprofile_vaccinations_history_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:onClick="@{() -> viewmodel.goToVaccinationsHistory()}">
 
                 <TextView

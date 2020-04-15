@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="viewmodel"
             type="com.yulmaso.kskfact.ui.login.LoginViewModel" />
@@ -16,6 +17,7 @@
             android:id="@+id/login_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/login_image_description"
             app:layout_constraintBottom_toTopOf="@id/login_input_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:hint="@string/login_et"
+                android:importantForAutofill="no"
                 android:inputType="text"
                 android:text="@={viewmodel.login}" />
 
@@ -49,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:hint="@string/password_et"
+                android:importantForAutofill="no"
                 android:inputType="textPassword"
                 android:text="@={viewmodel.password}" />
 

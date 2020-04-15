@@ -3,19 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardElevation="10dp">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/changePassword_header"
+            android:id="@+id/addService_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="@string/newTraining_header"
+            android:text="@string/addService_header"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/addService_separator1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,104 +29,94 @@
             android:background="@color/lightGrey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/changePassword_header" />
+            app:layout_constraintTop_toBottomOf="@id/addService_header" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/addService_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addService_separator1"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_info_row" />
 
         <TextView
-            android:id="@+id/newTraining_horseTitle"
+            android:id="@+id/addService_chosen_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/darkGrey"
+            app:layout_constraintBottom_toTopOf="@id/addService_duration_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addService_rv"
+            tools:text="Овес" />
+
+        <TextView
+            android:id="@+id/addService_duration_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/newTraining_horse"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/newTraining_startTitle"
-            app:layout_constraintEnd_toStartOf="@id/newTraining_horseSpinner"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            android:text="@string/addService_duration"
+            app:layout_constraintBottom_toTopOf="@id/addService_resultCost_tv"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addService_separator1" />
+            app:layout_constraintTop_toBottomOf="@id/addService_chosen_tv" />
 
         <Spinner
-            android:id="@+id/newTraining_horseSpinner"
+            android:id="@+id/addService_duration_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="18dp"
-            android:fontFamily="sans-serif-regular"
-            android:textAlignment="center"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/newTraining_horseTitle"
+            app:layout_constraintBottom_toBottomOf="@id/addService_duration_tv"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/newTraining_horseTitle"
-            app:layout_constraintTop_toTopOf="@id/newTraining_horseTitle"
-            tools:entries="@array/tools_spinner_horses" />
+            app:layout_constraintTop_toTopOf="@id/addService_duration_tv"
+            tools:entries="@array/tools_spinner_duration" />
 
         <TextView
-            android:id="@+id/newTraining_startTitle"
+            android:id="@+id/addService_resultCost_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            app:layout_constraintBottom_toTopOf="@id/newTraining_kindTitle"
-            android:text="@string/newTraining_startTime"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@id/newTraining_startSpinner"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/newTraining_horseTitle" />
-
-        <Spinner
-            android:id="@+id/newTraining_startSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
-            app:layout_constraintBottom_toBottomOf="@id/newTraining_startTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/newTraining_startTitle"
-            app:layout_constraintTop_toTopOf="@id/newTraining_startTitle"
-            tools:entries="@array/tools_spinner_start" />
-
-        <TextView
-            android:id="@+id/newTraining_kindTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:text="@string/addService_resultCost"
             app:layout_constraintBottom_toTopOf="@id/addService_separator2"
-            android:text="@string/newTraining_kind"
-            app:layout_constraintEnd_toStartOf="@id/newTraining_kindSpinner"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/newTraining_startTitle" />
+            app:layout_constraintTop_toBottomOf="@id/addService_duration_tv" />
 
-        <Spinner
-            android:id="@+id/newTraining_kindSpinner"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="18dp"
-            app:layout_constraintBottom_toBottomOf="@id/newTraining_kindTitle"
+            app:layout_constraintBottom_toBottomOf="@id/addService_resultCost_tv"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/newTraining_kindTitle"
-            app:layout_constraintTop_toTopOf="@id/newTraining_kindTitle"
-            tools:entries="@array/tools_spinner_kind" />
+            app:layout_constraintTop_toTopOf="@id/addService_resultCost_tv"
+            tools:text="7500 рублей" />
 
         <View
             android:id="@+id/addService_separator2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/lightGrey"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/addService_addButton"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/newTraining_kindTitle" />
+            app:layout_constraintTop_toBottomOf="@id/addService_resultCost_tv" />
 
         <Button
             android:id="@+id/addService_addButton"
             style="@style/ButtonFlatStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/newTraining_addButton"
+            android:text="@string/addService_add_btn"
             android:textColor="@color/colorAccent"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@id/addService_separator3"
@@ -150,13 +139,12 @@
             style="@style/ButtonFlatStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/newTraining_cancelButton"
+            android:text="@string/addService_cancel_btn"
             android:textColor="@color/darkGrey"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/addService_separator3"
             app:layout_constraintTop_toBottomOf="@id/addService_separator2" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -10,6 +10,7 @@
     <string name="login_et">Логин</string>
     <string name="password_et">Пароль</string>
     <string name="enter_btn">Войти</string>
+    <string name="login_image_description">Логотип</string>
 
     <!--News screen-->
     <string name="news_screen_header">Новости</string>
@@ -47,7 +48,7 @@
     <string name="horses_owner_title">Владелец</string>
 
     <!--Horse profile-->
-    <string name="horse_profile_screen_header">Профиль лошади</string>
+    <string name="hprofile_screen_header">Профиль лошади</string>
     <string name="hprofile_gender_age_title">Пол, возраст</string>
     <string name="hprofile_owner_title">Владелец</string>
     <string name="hprofile_stable_title">Коншня</string>
@@ -56,6 +57,13 @@
     <string name="hprofile_add_btn">Добавить</string>
     <string name="hprofile_planning_vaccinations_block">Планируемые вакцинации</string>
     <string name="hprofile_vaccinations_history_btn">История вакцинаций</string>
+    <string name="hprofile_add_btn_description">Иконка добавления дополнительной услуги</string>
+
+    <!--User profile-->
+    <string name="uprofile_screen_header">Профиль</string>
+    <string name="uprofile_position_title">Должность</string>
+    <string name="uprofile_phone_title">Телефон</string>
+    <string name="uprofile_horse_access_block">Доступ к лошадям</string>
 
     <!--Dialog new training-->
     <string name="newTraining_header">Новая тренировка</string>
@@ -72,6 +80,24 @@
     </string-array>
     <string-array name="tools_spinner_kind">
         <item name="adult">Взрослая</item>
+    </string-array>
+    
+    <!--Dialog change password-->
+    <string name="changePassword_header">Смена пароля</string>
+    <string name="changePassword_oldPassword">Старый пароль</string>
+    <string name="changePassword_newPassword">Новый пароль</string>
+    <string name="changePassword_repeatPassword">Повторите пароль</string>
+    <string name="changePassword_save_btn">Сохранить</string>
+    <string name="changePassword_cancel_btn">Отмена</string>
+
+    <!--Dialog add service-->
+    <string name="addService_header">Выбор услуг</string>
+    <string name="addService_duration">Длительность:</string>
+    <string name="addService_resultCost">Итоговая стоимость:</string>
+    <string name="addService_add_btn">Добавить</string>
+    <string name="addService_cancel_btn">Отмена</string>
+    <string-array name="tools_spinner_duration">
+        <item name="1 month">1 месяц</item>
     </string-array>
 
     <!--News item-->
