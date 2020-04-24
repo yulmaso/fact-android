@@ -173,10 +173,10 @@
                 tools:listitem="@layout/item_info_row" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/hprofile_add_additional_btn"
+                android:id="@+id/hprofile_add_service_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> viewmodel.addAdditionalService()}">
+                android:onClick="@{() -> viewmodel.addService()}">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -185,7 +185,7 @@
                     android:layout_marginEnd="18dp">
 
                     <TextView
-                        android:id="@+id/hprofile_add_additional_btn_title"
+                        android:id="@+id/hprofile_add_service_btn_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -199,9 +199,9 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toBottomOf="@id/hprofile_add_additional_btn_title"
+                        app:layout_constraintBottom_toBottomOf="@id/hprofile_add_service_btn_title"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/hprofile_add_additional_btn_title"
+                        app:layout_constraintTop_toTopOf="@id/hprofile_add_service_btn_title"
                         app:srcCompat="@drawable/ic_add_accent"
                         android:contentDescription="@string/hprofile_add_btn_description" />
 

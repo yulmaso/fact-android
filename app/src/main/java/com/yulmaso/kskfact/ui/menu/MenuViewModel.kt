@@ -9,4 +9,10 @@ class MenuViewModel @Inject constructor(
     application: Application,
     private val repository: Repository
 ): BaseViewModel(application) {
+
+    var userId: Long? = null
+
+    init {
+        userId = repository.getLoggedInUserId()
+    }
 }

@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="18dp"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/vacHistory_year_tv"
-        style="@style/RobotoLight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:textAllCaps="true"
-        android:textColor="@color/darkGrey"
-        tools:text="2018" />
-
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
+        android:layout_marginBottom="18dp"
+        android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/vacHistory_year_rv"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/vacHistory_year_tv"
+            style="@style/RobotoLight"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:itemCount="5"
-            tools:listitem="@layout/item_info_row" />
+            android:layout_marginStart="18dp"
+            android:textAllCaps="true"
+            android:textColor="@color/darkGrey"
+            tools:text="2018" />
 
-    </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
 
-</LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/vacHistory_year_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_info_row" />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

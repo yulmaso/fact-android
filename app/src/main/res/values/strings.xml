@@ -50,6 +50,7 @@
     <!--Horse profile-->
     <string name="hprofile_screen_header">Профиль лошади</string>
     <string name="hprofile_gender_age_title">Пол, возраст</string>
+    <string name="hprofile_age">лет</string>
     <string name="hprofile_owner_title">Владелец</string>
     <string name="hprofile_stable_title">Коншня</string>
     <string name="hprofile_access_block">Доступ</string>

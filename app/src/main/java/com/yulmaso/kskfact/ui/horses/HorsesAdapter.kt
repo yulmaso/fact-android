@@ -1,21 +1,21 @@
 package com.yulmaso.kskfact.ui.horses
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.yulmaso.kskfact.R
+import com.yulmaso.kskfact.data.model.Horse
 import com.yulmaso.kskfact.databinding.ItemHorsesBinding
 
 class HorsesAdapter(
-    private val mOnHorsesListener: onHorsesListener
+    private val mOnHorsesListener: OnHorsesListener
 ): RecyclerView.Adapter<HorsesAdapter.HorsesViewHolder>() {
 
-    //TODO
-    private val horses: MutableList<Int> = ArrayList()
+    private val items: MutableList<Horse> = ArrayList()
 
-    interface onHorsesListener {
-        fun onHorsesClick(horseName: String)
+    interface OnHorsesListener {
+        fun onHorsesClick(horse: Horse)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorsesViewHolder =
@@ -23,26 +23,37 @@ class HorsesAdapter(
             LayoutInflater.from(parent.context), parent, false
         ), mOnHorsesListener)
 
-    override fun getItemCount() = horses.size
+    override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: HorsesViewHolder, position: Int) =
-        holder.bind()
+        holder.bind(items[position])
 
-    //TODO
-    fun setItems() {}
+    fun setItems(items: List<Horse>) {
+        if (!items.isNullOrEmpty()) {
+            this.items.addAll(items)
+            notifyDataSetChanged()
+        }
+    }
 
-    class HorsesViewHolder(
+    inner class HorsesViewHolder(
         private val binding: ItemHorsesBinding,
-        private val onHorsesListener: onHorsesListener
+        private val OnHorsesListener: OnHorsesListener
     ): RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
-        //TODO
-        fun bind() {
-
+        fun bind(horse: Horse) {
+            binding.apply {
+                root.setOnClickListener(this@HorsesViewHolder)
+                horsesName.text = horse.name
+                horsesGenderAgeTitle.text = String.format(
+                    "%s, %d %s",
+                    arrayOf(horse.gender, horse.age, root.context.getString(R.string.hprofile_age))
+                )
+                horsesOwner.text = horse.owner!!.realname
+            }
         }
 
         override fun onClick(p0: View?) {
-            onHorsesListener.onHorsesClick(binding.horsesName.text.toString())
+            OnHorsesListener.onHorsesClick(items[layoutPosition])
         }
     }
 }

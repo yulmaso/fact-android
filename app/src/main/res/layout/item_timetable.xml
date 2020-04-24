@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="timetableEvent"
-            type="com.yulmaso.kskfact.data.model.TimetableEvent" />
+
     </data>
 
     <androidx.cardview.widget.CardView

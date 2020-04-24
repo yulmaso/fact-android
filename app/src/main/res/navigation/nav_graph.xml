@@ -25,6 +25,15 @@
         <action
             android:id="@+id/action_menuFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_horsesFragment"
+            app:destination="@id/horsesFragment" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -40,5 +49,48 @@
             app:launchSingleTop="true"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.yulmaso.kskfact.ui.userProfile.UserProfileFragment"
+        android:label="UserProfileFragment">
+        <argument
+            android:name="userId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.yulmaso.kskfact.ui.users.UsersFragment"
+        android:label="UsersFragment" >
+        <action
+            android:id="@+id/action_usersFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/horsesFragment"
+        android:name="com.yulmaso.kskfact.ui.horses.HorsesFragment"
+        android:label="HorsesFragment" >
+        <action
+            android:id="@+id/action_horsesFragment_to_horseProfileFragment"
+            app:destination="@id/horseProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/horseProfileFragment"
+        android:name="com.yulmaso.kskfact.ui.horseProfile.HorseProfileFragment"
+        android:label="HorseProfileFragment" >
+        <argument
+            android:name="horseId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_horseProfileFragment_to_vaccinationsHistoryFragment"
+            app:destination="@id/vaccinationsHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vaccinationsHistoryFragment"
+        android:name="com.yulmaso.kskfact.ui.vaccinationsHistory.VaccinationsHistoryFragment"
+        android:label="VaccinationsHistoryFragment" >
+        <argument
+            android:name="horse"
+            app:argType="com.yulmaso.kskfact.data.model.Horse" />
     </fragment>
 </navigation>

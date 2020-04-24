@@ -12,7 +12,9 @@ class HorseProfileViewModel @Inject constructor(
 
     lateinit var navigator: HorseProfileNavigator
 
-    fun addAdditionalService() {
+    var horseId: Long? = null
+
+    fun addService() {
         navigator.openAdditionalServiceDialog()
     }
 
