@@ -43,7 +43,8 @@
                 android:hint="@string/login_et"
                 android:importantForAutofill="no"
                 android:inputType="text"
-                android:text="@={viewmodel.login}" />
+                android:text="@={viewmodel.login}"
+                android:focusedByDefault="false" />
 
             <EditText
                 android:id="@+id/password_et"
@@ -53,7 +54,8 @@
                 android:hint="@string/password_et"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:text="@={viewmodel.password}" />
+                android:text="@={viewmodel.password}"
+                android:focusedByDefault="false" />
 
             <Button
                 style="@style/ButtonRoundedStyle"

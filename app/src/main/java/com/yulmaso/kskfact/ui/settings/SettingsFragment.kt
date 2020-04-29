@@ -40,15 +40,15 @@ class SettingsFragment: BaseFragment(), RequestListener, SettingsNavigator {
     }
 
     override fun onStarted() {
-        TODO("Not yet implemented")
+        showProgressBar(childFragmentManager)
     }
 
     override fun onSuccess() {
-        TODO("Not yet implemented")
+        dismissProgressBar()
     }
 
     override fun onFailure(message: String) {
-        TODO("Not yet implemented")
+        dismissProgressBar()
     }
 
     override fun goToLogin() {

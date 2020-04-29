@@ -10,18 +10,20 @@ import com.yulmaso.kskfact.utils.makePositionsString
 
 class UsersAdapter(
     private val onUsersClickListener: OnUsersClickListener
-): RecyclerView.Adapter<UsersAdapter.UsersViewHolder>() {
+) : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>() {
 
     private val items: MutableList<User> = ArrayList()
 
-    interface OnUsersClickListener{
+    interface OnUsersClickListener {
         fun onUserClick(user: User)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        UsersViewHolder(ItemUsersBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
-        ), onUsersClickListener)
+        UsersViewHolder(
+            ItemUsersBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            ), onUsersClickListener
+        )
 
     override fun getItemCount() = items.size
 
@@ -30,7 +32,10 @@ class UsersAdapter(
 
     fun setItems(items: List<User>) {
         if (!items.isNullOrEmpty()) {
-            this.items.addAll(items)
+            this.items.apply {
+                clear()
+                addAll(items)
+            }
             notifyDataSetChanged()
         }
     }
@@ -38,7 +43,7 @@ class UsersAdapter(
     inner class UsersViewHolder(
         private val binding: ItemUsersBinding,
         private val onUsersClickListener: OnUsersClickListener
-    ): RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+    ) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
         fun bind(user: User) {
             binding.apply {
                 root.setOnClickListener(this@UsersViewHolder)
@@ -46,6 +51,7 @@ class UsersAdapter(
                 usersPositionTv.text = makePositionsString(user.positions)
             }
         }
+
         override fun onClick(p0: View?) {
             onUsersClickListener.onUserClick(items[layoutPosition])
         }

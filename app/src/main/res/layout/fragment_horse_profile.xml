@@ -31,6 +31,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:textSize="24sp"
+                    android:text="@{viewmodel.horse.name}"
                     app:layout_constraintBottom_toTopOf="@id/hprofile_separator1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -165,7 +166,7 @@
                 android:textColor="@color/darkGrey" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/hprofile_additions_rv"
+                android:id="@+id/hprofile_services_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

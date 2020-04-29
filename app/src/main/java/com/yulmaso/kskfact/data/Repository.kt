@@ -30,6 +30,8 @@ class Repository @Inject constructor(
     fun getHorse(id: Long) = retrofitDataSource.getHorse(id)
     fun saveHorse(horse: Horse) = retrofitDataSource.saveHorse(horse)
 
+    fun getAllNews() = retrofitDataSource.getAllNews()
+
     fun getAllServices() = retrofitDataSource.getAllServices()
     fun getService(id: Long) = retrofitDataSource.getService(id)
     fun saveService(service: Service) = retrofitDataSource.saveService(service)

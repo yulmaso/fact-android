@@ -24,11 +24,11 @@ class MenuAdapter(
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
         when (position) {
-            1 -> holder.bind(R.drawable.ic_profile, R.string.profile_menu_item)
-            2 -> holder.bind(R.drawable.ic_horse, R.string.horses_menu_item)
-            3 -> holder.bind(R.drawable.ic_employee, R.string.employees_menu_item)
-            4 -> holder.bind(R.drawable.ic_camera, R.string.cameras_menu_item)
-            5 -> holder.bind(R.drawable.ic_settings, R.string.settings_menu_item)
+            0 -> holder.bind(R.drawable.ic_profile, R.string.profile_menu_item)
+            1 -> holder.bind(R.drawable.ic_horse, R.string.horses_menu_item)
+            2 -> holder.bind(R.drawable.ic_employee, R.string.employees_menu_item)
+            3 -> holder.bind(R.drawable.ic_camera, R.string.cameras_menu_item)
+            4 -> holder.bind(R.drawable.ic_settings, R.string.settings_menu_item)
         }
     }
 
@@ -39,6 +39,7 @@ class MenuAdapter(
 
         fun bind(icon: Int, name: Int) {
             binding.apply {
+                root.setOnClickListener(this@MenuViewHolder)
                 menuIv.setImageResource(icon)
                 menuTv.setText(name)
             }

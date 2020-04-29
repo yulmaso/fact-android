@@ -1,5 +1,6 @@
 package com.yulmaso.kskfact.data.model
 
+import com.yulmaso.kskfact.data.model.enums.EventType
 import java.util.*
 
 class Event {
@@ -9,5 +10,5 @@ class Event {
     var startTime: Calendar? = null
     var endTime: Calendar? = null
     var enabled: Boolean? = null
-    var eventType: Event? = null
+    var eventType: EventType? = null
 }

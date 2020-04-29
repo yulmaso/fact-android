@@ -1,151 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.yulmaso.kskfact.ui.dialogFragments.addService.AddServiceViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/addService_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="@string/addService_header"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/addService_separator1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:id="@+id/addService_separator1"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/lightGrey"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addService_header" />
+            android:layout_height="wrap_content">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/addService_rv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addService_separator1"
-            tools:itemCount="2"
-            tools:listitem="@layout/item_info_row" />
+            <TextView
+                android:id="@+id/addService_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/addService_header"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/addService_separator1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/addService_chosen_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/darkGrey"
-            app:layout_constraintBottom_toTopOf="@id/addService_duration_tv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addService_rv"
-            tools:text="Овес" />
+            <View
+                android:id="@+id/addService_separator1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/lightGrey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addService_header" />
 
-        <TextView
-            android:id="@+id/addService_duration_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/addService_duration"
-            app:layout_constraintBottom_toTopOf="@id/addService_resultCost_tv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addService_chosen_tv" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/addService_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addService_separator1"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_info_row" />
 
-        <Spinner
-            android:id="@+id/addService_duration_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
-            app:layout_constraintBottom_toBottomOf="@id/addService_duration_tv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/addService_duration_tv"
-            tools:entries="@array/tools_spinner_duration" />
+            <TextView
+                android:id="@+id/addService_chosen_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/darkGrey"
+                android:text="@{viewmodel.chosenService.name}"
+                app:layout_constraintBottom_toTopOf="@id/addService_duration_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addService_rv"
+                tools:text="Овес" />
 
-        <TextView
-            android:id="@+id/addService_resultCost_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/addService_resultCost"
-            app:layout_constraintBottom_toTopOf="@id/addService_separator2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addService_duration_tv" />
+            <TextView
+                android:id="@+id/addService_duration_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/addService_duration"
+                app:layout_constraintBottom_toTopOf="@id/addService_resultCost_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addService_chosen_tv" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
-            app:layout_constraintBottom_toBottomOf="@id/addService_resultCost_tv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/addService_resultCost_tv"
-            tools:text="7500 рублей" />
+            <Spinner
+                android:id="@+id/addService_duration_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/addService_duration_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/addService_duration_tv"
+                tools:entries="@array/addService_spinner_duration_options" />
 
-        <View
-            android:id="@+id/addService_separator2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/lightGrey"
-            app:layout_constraintBottom_toTopOf="@id/addService_addButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addService_resultCost_tv" />
+            <TextView
+                android:id="@+id/addService_resultCost_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/addService_resultCost"
+                app:layout_constraintBottom_toTopOf="@id/addService_separator2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addService_duration_tv" />
 
-        <Button
-            android:id="@+id/addService_addButton"
-            style="@style/ButtonFlatStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/addService_add_btn"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@id/addService_separator3"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addService_separator2" />
+            <TextView
+                android:id="@+id/addService_resultCost_description_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/addService_resultCost_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/addService_resultCost_tv"
+                tools:text="7500 рублей" />
 
-        <View
-            android:id="@+id/addService_separator3"
-            android:layout_width="1dp"
-            android:layout_height="0dp"
-            android:background="@color/lightGrey"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/addService_cancelButton"
-            app:layout_constraintStart_toEndOf="@id/addService_addButton"
-            app:layout_constraintTop_toBottomOf="@id/addService_separator2" />
+            <View
+                android:id="@+id/addService_separator2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lightGrey"
+                app:layout_constraintBottom_toTopOf="@id/addService_addButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addService_resultCost_tv" />
 
-        <Button
-            android:id="@+id/addService_cancelButton"
-            style="@style/ButtonFlatStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/addService_cancel_btn"
-            android:textColor="@color/darkGrey"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/addService_separator3"
-            app:layout_constraintTop_toBottomOf="@id/addService_separator2" />
+            <Button
+                android:id="@+id/addService_addButton"
+                style="@style/ButtonFlatStyle"
+                android:layout_width="0dp"
+                android:onClick="@{() -> viewmodel.addService()}"
+                android:layout_height="wrap_content"
+                android:text="@string/addService_add_btn"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/addService_separator3"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addService_separator2" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:id="@+id/addService_separator3"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/addService_cancelButton"
+                app:layout_constraintStart_toEndOf="@id/addService_addButton"
+                app:layout_constraintTop_toBottomOf="@id/addService_separator2" />
 
-</androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/addService_cancelButton"
+                style="@style/ButtonFlatStyle"
+                android:layout_width="0dp"
+                android:onClick="@{() -> viewmodel.cancelAdding()}"
+                android:layout_height="wrap_content"
+                android:text="@string/addService_cancel_btn"
+                android:textColor="@color/darkGrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/addService_separator3"
+                app:layout_constraintTop_toBottomOf="@id/addService_separator2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

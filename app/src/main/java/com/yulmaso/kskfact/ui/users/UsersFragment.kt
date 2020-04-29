@@ -49,7 +49,7 @@ class UsersFragment: BaseFragment(), RequestListener, UsersAdapter.OnUsersClickL
     }
 
     override fun onStarted() {
-        showProgressBar()
+        showProgressBar(childFragmentManager)
     }
 
     override fun onSuccess() {

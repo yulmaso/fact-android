@@ -46,7 +46,7 @@ class UserProfileFragment: BaseFragment(), RequestListener {
     }
 
     override fun onStarted() {
-        showProgressBar()
+        showProgressBar(childFragmentManager)
     }
 
     override fun onSuccess() {

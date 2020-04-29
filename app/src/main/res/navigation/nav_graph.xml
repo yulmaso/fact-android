@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.yulmaso.kskfact.ui.login.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment">
         <action
             android:id="@+id/action_loginFragment_to_timetableFragment"
             app:destination="@id/timetableFragment"
@@ -21,7 +22,7 @@
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.yulmaso.kskfact.ui.menu.MenuFragment"
-        android:label="MenuFragment" >
+        android:label="MenuFragment">
         <action
             android:id="@+id/action_menuFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
@@ -42,7 +43,7 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.yulmaso.kskfact.ui.settings.SettingsFragment"
-        android:label="SettingsFragment" >
+        android:label="SettingsFragment">
         <action
             android:id="@+id/action_settingsFragment_to_loginFragment"
             app:destination="@id/loginFragment"
@@ -61,7 +62,7 @@
     <fragment
         android:id="@+id/usersFragment"
         android:name="com.yulmaso.kskfact.ui.users.UsersFragment"
-        android:label="UsersFragment" >
+        android:label="UsersFragment">
         <action
             android:id="@+id/action_usersFragment_to_userProfileFragment"
             app:destination="@id/userProfileFragment" />
@@ -69,7 +70,7 @@
     <fragment
         android:id="@+id/horsesFragment"
         android:name="com.yulmaso.kskfact.ui.horses.HorsesFragment"
-        android:label="HorsesFragment" >
+        android:label="HorsesFragment">
         <action
             android:id="@+id/action_horsesFragment_to_horseProfileFragment"
             app:destination="@id/horseProfileFragment" />
@@ -77,18 +78,18 @@
     <fragment
         android:id="@+id/horseProfileFragment"
         android:name="com.yulmaso.kskfact.ui.horseProfile.HorseProfileFragment"
-        android:label="HorseProfileFragment" >
-        <argument
-            android:name="horseId"
-            app:argType="long" />
+        android:label="HorseProfileFragment">
         <action
             android:id="@+id/action_horseProfileFragment_to_vaccinationsHistoryFragment"
             app:destination="@id/vaccinationsHistoryFragment" />
+        <argument
+            android:name="horse"
+            app:argType="com.yulmaso.kskfact.data.model.Horse" />
     </fragment>
     <fragment
         android:id="@+id/vaccinationsHistoryFragment"
         android:name="com.yulmaso.kskfact.ui.vaccinationsHistory.VaccinationsHistoryFragment"
-        android:label="VaccinationsHistoryFragment" >
+        android:label="VaccinationsHistoryFragment">
         <argument
             android:name="horse"
             app:argType="com.yulmaso.kskfact.data.model.Horse" />

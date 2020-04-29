@@ -5,11 +5,15 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 object Constants {
-    const val BASE_URL = "http://9199f900.ngrok.io/"
+    const val LOG_TAG = "myLogs"
+
+    const val BASE_URL = "https://cec02e65.ngrok.io"
 
     val yearFormat = SimpleDateFormat("yyyy", Locale.US)
     val monthFormat = SimpleDateFormat("MM", Locale.US)
     val dayFormat = SimpleDateFormat("dd", Locale.US)
+    val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.US)
+    val timeFormat = SimpleDateFormat("HH:mm", Locale.US)
 
     //preferences
     const val AUTH_PREFERENCES = "AUTH_PREFERENCES"

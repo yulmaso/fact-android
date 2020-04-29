@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.yulmaso.kskfact"
-        minSdkVersion 26
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -30,6 +30,11 @@ android {
         enabled true
     }
 
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
 }
 
 dependencies {
@@ -43,6 +48,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'com.google.android.material:material:1.1.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-rc01"
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 
     //Navigation component

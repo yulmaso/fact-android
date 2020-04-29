@@ -45,16 +45,16 @@ class HorsesFragment: BaseFragment(), HorsesAdapter.OnHorsesListener, RequestLis
 
     override fun onHorsesClick(horse: Horse) {
         val bundle = Bundle()
-        bundle.putLong("horseId", horse.id!!)
+        bundle.putSerializable("horse", horse)
         findNavController().navigate(R.id.action_horsesFragment_to_horseProfileFragment, bundle)
     }
 
     override fun onStarted() {
-        showProgressBar()
+        showProgressBar(childFragmentManager)
     }
 
     override fun onSuccess() {
-        showProgressBar()
+        dismissProgressBar()
     }
 
     override fun onFailure(message: String) {

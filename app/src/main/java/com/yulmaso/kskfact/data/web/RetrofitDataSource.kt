@@ -10,6 +10,7 @@ import javax.inject.Inject
 class RetrofitDataSource @Inject constructor(
     private val eventService: EventService,
     private val horseService: HorseService,
+    private val newsService: NewsService,
     private val servicesService: ServicesService,
     private val stableService: StableService,
     private val userService: UserService,
@@ -23,6 +24,8 @@ class RetrofitDataSource @Inject constructor(
     fun getAllHorses() = horseService.getAllHorses()
     fun getHorse(id: Long) = horseService.getHorse(id)
     fun saveHorse(horse: Horse) = horseService.saveHorse(horse)
+
+    fun getAllNews() = newsService.getAllNews()
 
     fun getAllServices() = servicesService.getAllServices()
     fun getService(id: Long) = servicesService.getService(id)

@@ -21,13 +21,13 @@ class VaccinationsHistoryFragment : BaseFragment(), RequestListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = injectViewModel(viewModelFactory)
-        viewModel.horse = requireArguments().getSerializable("horse") as Horse
         viewModel.vaccinationsMLive.value = viewModel.horse!!.horseVaccinations
 
         adapter = VaccinationHistoryAdapter()
         viewModel.vaccinations.observe(viewLifecycleOwner, Observer {
             adapter.setItems(it)
         })
+        viewModel.horse = requireArguments().getSerializable("horse") as Horse
     }
 
     override fun onCreateView(
@@ -43,11 +43,11 @@ class VaccinationsHistoryFragment : BaseFragment(), RequestListener {
     }
 
     override fun onStarted() {
-        showProgressBar()
+        showProgressBar(childFragmentManager)
     }
 
     override fun onSuccess() {
-        showProgressBar()
+        dismissProgressBar()
     }
 
     override fun onFailure(message: String) {

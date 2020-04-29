@@ -6,6 +6,9 @@
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+        <item name="android:windowBackground">@color/background</item>
+
+
         <item name="android:textViewStyle">@style/BaseTextViewStyle</item>
         <item name="editTextStyle">@style/EditTextBaseStyle</item>
         <item name="android:textColorHint">@color/darkGrey</item>

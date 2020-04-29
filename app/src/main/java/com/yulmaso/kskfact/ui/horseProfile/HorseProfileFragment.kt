@@ -6,22 +6,42 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.yulmaso.kskfact.R
+import com.yulmaso.kskfact.data.model.Horse
+import com.yulmaso.kskfact.data.model.Vaccination
 import com.yulmaso.kskfact.databinding.FragmentHorseProfileBinding
 import com.yulmaso.kskfact.di.injectViewModel
 import com.yulmaso.kskfact.ui.BaseFragment
 import com.yulmaso.kskfact.ui.RequestListener
+import com.yulmaso.kskfact.ui.dialogFragments.addService.AddServiceDialogFragment
 
-class HorseProfileFragment: BaseFragment(), RequestListener, HorseProfileNavigator {
+class HorseProfileFragment: BaseFragment(), RequestListener, HProfileVaccinationsAdapter.OnVaccinationListener,
+    HorseProfileNavigator {
 
     private lateinit var viewModel: HorseProfileViewModel
+
+    private lateinit var accessAdapter: HProfileAccessAdapter
+    private lateinit var serviceAdapter: HProfileServicesAdapter
+    private lateinit var vaccinationsAdapter: HProfileVaccinationsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = injectViewModel(viewModelFactory)
         viewModel.navigator = this
         viewModel.requestListener = this
-        viewModel.horseId = requireArguments().getLong("horseId")
+
+        accessAdapter = HProfileAccessAdapter()
+        serviceAdapter = HProfileServicesAdapter()
+        vaccinationsAdapter = HProfileVaccinationsAdapter(this)
+
+        viewModel.horse.observe(viewLifecycleOwner, Observer {
+            accessAdapter.setItems(it.horseAccess)
+            serviceAdapter.setItems(it.horseServices)
+            vaccinationsAdapter.setItems(it.horseVaccinations)
+        })
+        viewModel.setProfileHorse(requireArguments().getSerializable("horse") as Horse)
     }
 
     override fun onCreateView(
@@ -34,24 +54,34 @@ class HorseProfileFragment: BaseFragment(), RequestListener, HorseProfileNavigat
         )
         binding.apply {
             viewmodel = viewModel
+            hprofileAccessRv.adapter = accessAdapter
+            hprofileServicesRv.adapter = serviceAdapter
+            hprofilePlanningVaccinationsRv.adapter = vaccinationsAdapter
         }
         return binding.root
     }
 
-    override fun goToVaccinationsHistory() {
-        TODO("Not yet implemented")
+    override fun goToVaccinationsHistory(horse: Horse) {
+        val bundle = Bundle()
+        bundle.putSerializable("horse", horse)
+        findNavController()
+            .navigate(R.id.action_horseProfileFragment_to_vaccinationsHistoryFragment, bundle)
     }
 
-    override fun openAdditionalServiceDialog() {
-        TODO("Not yet implemented")
+    override fun openAddServiceDialog() {
+        val addServiceDialogFragment = AddServiceDialogFragment(viewModel.horse.value!!)
+        addServiceDialogFragment.show(childFragmentManager, "addServiceDialog")
     }
+
+    override fun cancelVaccination(vaccination: Vaccination) =
+        viewModel.cancelVaccination(vaccination)
 
     override fun onStarted() {
-        showProgressBar()
+        showProgressBar(childFragmentManager)
     }
 
     override fun onSuccess() {
-        showProgressBar()
+        dismissProgressBar()
     }
 
     override fun onFailure(message: String) {

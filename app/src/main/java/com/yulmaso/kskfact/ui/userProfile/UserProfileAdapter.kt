@@ -22,7 +22,10 @@ class UserProfileAdapter: RecyclerView.Adapter<UserProfileAdapter.UserProfileVie
 
     fun setItems(items: List<HorseAccess>?) {
         if (!items.isNullOrEmpty()) {
-            this.items.addAll(items)
+            this.items.apply {
+                clear()
+                addAll(items)
+            }
             notifyDataSetChanged()
         }
     }

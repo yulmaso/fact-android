@@ -20,7 +20,7 @@ class LoadingDialogFragment @Inject constructor(): DialogFragment() {
 
     override fun onResume() {
         super.onResume()
-//        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
     }
 
 }

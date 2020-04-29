@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">KSKFact</string>
 
+    <!--Common-->
+    <string name="no_items_yet">Здесь пока пусто</string>
+    <string name="error_404">Отсутствует соединение с сервером</string>
+
     <!--Bottom navigation-->
     <string name="news">Новости</string>
     <string name="timetable">Расписание</string>
@@ -97,9 +101,13 @@
     <string name="addService_resultCost">Итоговая стоимость:</string>
     <string name="addService_add_btn">Добавить</string>
     <string name="addService_cancel_btn">Отмена</string>
-    <string-array name="tools_spinner_duration">
+    <string-array name="addService_spinner_duration_options">
+        <item name="1 week">1 неделя</item>
+        <item name="2 weeks">2 недели</item>
         <item name="1 month">1 месяц</item>
+        <item name="2 month">2 месяца</item>
     </string-array>
+    <string name="rubles">рублей</string>
 
     <!--News item-->
     <string name="tools_news_text">Ура, мы обновили песок и опилки в кордовом манеже. Приглашаем всех на занятия!</string>

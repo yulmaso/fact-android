@@ -13,6 +13,8 @@ class LoginViewModel @Inject constructor(
     var login: String? = null
     var password: String? = null
 
-    fun login() {}
+    fun login() {
+        requestListener?.onSuccess()
+    }
 
 }

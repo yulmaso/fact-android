@@ -37,7 +37,10 @@ class VaccinationHistoryAdapter: RecyclerView.Adapter<VaccinationHistoryAdapter.
 
     fun setItems(items: List<HorseVaccination>) {
         if (!items.isNullOrEmpty()) {
-            this.items.addAll(items)
+            this.items.apply {
+                clear()
+                addAll(items)
+            }
             for (item in items) {
                 val time = item.vaccination!!.time
                 val locale = Locale.forLanguageTag("ru")
