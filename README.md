@@ -7,3 +7,4 @@ Used technologies:
 - Retrofit
 - DataBinding
 - MVVM architecture
+- Single activity with Navigation component
